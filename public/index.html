@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Chat App</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Voice Chat</h1>
+            <div class="theme-switcher">
+                <button id="theme-toggle">テーマ変更</button>
+            </div>
+        </header>
+        
+        <main>
+            <div class="welcome-screen" id="welcome-screen">
+                <h2>新しい友達と話そう！</h2>
+                <div class="join-options">
+                    <button id="random-match-btn" class="primary-btn">ランダムでつながる</button>
+                    <button id="interest-match-btn" class="secondary-btn">趣味でつながる</button>
+                </div>
+                
+                <div class="interest-form" id="interest-form" style="display: none;">
+                    <h3>あなたの興味・趣味を教えてください</h3>
+                    <div class="interest-tags">
+                        <button class="tag" data-tag="music">音楽</button>
+                        <button class="tag" data-tag="games">ゲーム</button>
+                        <button class="tag" data-tag="anime">アニメ</button>
+                        <button class="tag" data-tag="sports">スポーツ</button>
+                        <button class="tag" data-tag="books">本・漫画</button>
+                        <button class="tag" data-tag="movies">映画・ドラマ</button>
+                        <button class="tag" data-tag="travel">旅行</button>
+                        <button class="tag" data-tag="food">グルメ</button>
+                        <button class="tag" data-tag="tech">テクノロジー</button>
+                        <button class="tag" data-tag="art">アート</button>
+                    </div>
+                    <button id="start-matching-btn" class="primary-btn">マッチング開始</button>
+                </div>
+            </div>
+            
+            <div class="chat-room" id="chat-room" style="display: none;">
+                <div class="connection-status">
+                    <span id="status-indicator"></span>
+                    <span id="connection-text">接続中...</span>
+                </div>
+                
+                <div class="voice-controls">
+                    <button id="mute-btn" class="control-btn">ミュート</button>
+                    <button id="end-call-btn" class="control-btn danger">通話終了</button>
+                </div>
+                
+                <div class="text-chat">
+                    <div class="messages" id="messages"></div>
+                    <div class="message-input">
+                        <input type="text" id="message-input" placeholder="メッセージを入力...">
+                        <button id="send-btn">送信</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="matching-screen" id="matching-screen" style="display: none;">
+                <div class="loader"></div>
+                <p>相手を探しています...</p>
+                <button id="cancel-matching-btn" class="secondary-btn">キャンセル</button>
+            </div>
+        </main>
+        
+        <footer>
+            <p>© 2025 Voice Chat App</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="https://unpkg.com/simple-peer@9.11.1/simplepeer.min.js"></script>
+    <script src="js/app.js" type="module"></script>
+</body>
+</html>
