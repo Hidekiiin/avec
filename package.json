@@ -1,0 +1,26 @@
+{
+  "name": "voice-chat-app",
+  "version": "1.0.0",
+  "description": "Simple voice chat application for making friends",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server ./public -p 8080",
+    "deploy": "gh-pages -d public"
+  },
+  "dependencies": {
+    "simple-peer": "^9.11.1",
+    "socket.io-client": "^4.5.4"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0",
+    "http-server": "^14.1.1"
+  },
+  "keywords": [
+    "voice-chat",
+    "webrtc",
+    "socket.io",
+    "friend-making"
+  ],
+  "author": "",
+  "license": "MIT"
+}
